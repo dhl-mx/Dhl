@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHL - Rastreo de Envío</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(to bottom, #fff9e6 0%, #ffffff 100%);
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .header {
+        background: #FFCC00;
+        padding: 25px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid #D40511;
+    }
+
+    .logo {
+        font-size: 42px;
+        font-weight: bold;
+        color: #D40511;
+        letter-spacing: 6px;
+    }
+
+    .tracking-info {
+        background: white;
+        padding: 12px 20px;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .tracking-info label {
+        display: block;
+        font-size: 11px;
+        color: #666;
+        margin-bottom: 4px;
+    }
+
+    .tracking-info .number {
+        font-size: 18px;
+        font-weight: bold;
+        color: #D40511;
+        letter-spacing: 1px;
+    }
+
+    .content {
+        padding: 35px 40px;
+    }
+
+    .status-alert {
+        background: linear-gradient(to right, #FFF4CC 0%, #FFEB99 100%);
+        border-left: 5px solid #FFCC00;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 4px;
+    }
+
+    .status-alert h2 {
+        color: #D40511;
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .status-alert p {
+        color: #333;
+        font-size: 15px;
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .detail-box {
+        background: #F8F8F8;
+        padding: 18px;
+        border-radius: 4px;
+        border-left: 3px solid #FFCC00;
+    }
+
+    .detail-box h3 {
+        color: #D40511;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .detail-box p {
+        color: #333;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .tracking-title {
+        color: #D40511;
+        font-size: 20px;
+        margin-bottom: 25px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #FFCC00;
+    }
+
+    .timeline {
+        position: relative;
+        padding-left: 45px;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 18px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #FFCC00;
+    }
+
+    .timeline-event {
+        position: relative;
+        margin-bottom: 28px;
+    }
+
+    .timeline-event::before {
+        content: '';
+        position: absolute;
+        left: -37px;
+        top: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #FFCC00;
+        border: 3px solid white;
+        box-shadow: 0 0 0 2px #FFCC00;
+    }
+
+    .timeline-event.current::before {
+        background: #D40511;
+        box-shadow: 0 0 0 2px #D40511;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            box-shadow: 0 0 0 2px #D40511;
+        }
+        50% {
+            box-shadow: 0 0 0 6px rgba(212, 5, 17, 0.3);
+        }
+    }
+
+    .timeline-event h4 {
+        color: #D40511;
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .timeline-event .datetime {
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .timeline-event .location {
+        color: #555;
+        font-size: 13px;
+    }
+
+    .footer {
+        background: #F5F5F5;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        font-size: 13px;
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">DHL</div>
+            <div class="tracking-info">
+                <label>Número de Guía</label>
+                <div class="number">3847592610</div>
+            </div>
+        </div>
+
+```
+    <div class="content">
+        <div class="status-alert">
+            <h2>📦 En Proceso de Entrega</h2>
+            <p>Su paquete está en tránsito hacia su destino. Fecha estimada de entrega: <strong>10 de Noviembre, 2025</strong></p>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-box">
+                <h3>Origen</h3>
+                <p>Santo Domingo<br>República Dominicana</p>
+            </div>
+            <div class="detail-box">
+                <h3>Destino</h3>
+                <p>Libertad, 41800<br>Cruz Grande, Gro.<br>México</p>
+            </div>
+            <div class="detail-box">
+                <h3>Contenido</h3>
+                <p>iPhone<br>(Dispositivo Electrónico)</p>
+            </div>
+            <div class="detail-box">
+                <h3>Peso</h3>
+                <p>0.85 kg</p>
+            </div>
+            <div class="detail-box">
+                <h3>Dimensiones</h3>
+                <p>20 x 15 x 8 cm</p>
+            </div>
+            <div class="detail-box">
+                <h3>Servicio</h3>
+                <p>DHL Express<br>Internacional</p>
+            </div>
+        </div>
+
+        <h3 class="tracking-title">📍 Historial de Rastreo</h3>
+
+        <div class="timeline">
+            <div class="timeline-event current">
+                <h4>En Tránsito - En Camino a Destino</h4>
+                <div class="datetime">08 Nov 2025, 14:30 hrs</div>
+                <div class="location">Ciudad de México, México - El paquete está en ruta hacia la ubicación de entrega final</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Procesado en Centro de Distribución</h4>
+                <div class="datetime">08 Nov 2025, 06:15 hrs</div>
+                <div class="location">Ciudad de México, México - Paquete procesado y clasificado</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Arribó a México</h4>
+                <div class="datetime">07 Nov 2025, 22:45 hrs</div>
+                <div class="location">Aeropuerto Internacional CDMX - Llegada al país destino</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Liberación Aduanal Completada</h4>
+                <div class="datetime">07 Nov 2025, 18:20 hrs</div>
+                <div class="location">En tránsito internacional - Liberado por aduana</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>En Vuelo Internacional</h4>
+                <div class="datetime">07 Nov 2025, 10:00 hrs</div>
+                <div class="location">En tránsito - Paquete en vuelo hacia México</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Salida del País de Origen</h4>
+                <div class="datetime">06 Nov 2025, 19:30 hrs</div>
+                <div class="location">Santo Domingo, República Dominicana - Despachado vía aérea</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Procesado en Hub Internacional</h4>
+                <div class="datetime">06 Nov 2025, 14:10 hrs</div>
+                <div class="location">Santo Domingo, República Dominicana - Verificación completada</div>
+            </div>
+
+            <div class="timeline-event">
+                <h4>Recolectado</h4>
+                <div class="datetime">05 Nov 2025, 16:45 hrs</div>
+                <div class="location">Santo Domingo, República Dominicana - Recolectado por DHL</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 DHL International GmbH. Todos los derechos reservados.</p>
+    </div>
+</div>
+```
+
+</body>
+</html>
